@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %} {% block title %} Posts {% endblock %}
+.........{% block content %}
+<section class="container">
+  {% for post in posts %}
+  <div class="list-group">
+    <article>
+      <div class="media-body">
+        <div class="list-group">
+          <a href="#">{{ post.author }}</a>
+          <small>{{ post.data }}</small>
+        </div>
+        <h2><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+        <p>{{ post.content }}</p>
+      </div>
+    </article>
+  </div>
+  {% endfor %}
+</section>
+<section class="container">
+  <div>
+    <section>
+      <br />
+      <br />
+      <a href="{% url 'post-create' %}">Clique aqui para criar novo post</a>
+    </section>
+  </div>
+</section>
+{% endblock %} {% block footer %} {% endblock %}

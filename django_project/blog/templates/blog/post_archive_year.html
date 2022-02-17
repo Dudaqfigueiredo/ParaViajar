@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %} {% load crispy_forms_tags %} {% block title %}
+Archive blog {% endblock %} {% block content %}
+<div class="container">
+  <section>
+    <div>
+      <h1>All Article for {{ year|date:"Y" }}</h1>
+      {% for obj in object_list %}
+      <p>
+        <li>{{ obj.title }} - {{ obj.data|date:"F j, Y" }}</li>
+      </p>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %} {% block footer %} {% endblock %}

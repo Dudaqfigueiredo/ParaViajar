@@ -1,0 +1,57 @@
+{% extends "blog/base.html" %} {% block title %} Welcome {% endblock %}
+.......{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <div class="lado">
+      <div class="lado-escrito">
+        <h1>Lugares para viajar</h1>
+
+        <p>"Às vezes nem é desejo de chegar. É só de ir!"</p>
+
+        <p>
+          <a
+            class="btn btn-primary btn-lg"
+            href="{% url 'about' %}"
+            role="button"
+            >Mais sobre &raquo;</a
+          >
+        </p>
+      </div>
+      <img src="../../static/blog/img/voar.png" />
+    </div>
+  </div>
+</div>
+{% if user.is_authenticated %}
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Posts</h2>
+      <p>
+        <a class="btn btn-default" href="{% url 'business' %}" role="button"
+          >Visualizar &raquo;</a
+        >
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Lugares</h2>
+      <p>
+        <a class="btn btn-default" href="#" role="button">Visualizar &raquo;</a>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Fale conosco</h2>
+      <p>
+        <a class="btn btn-default" href="{% url 'contants' %}" role="button"
+          >Visualizar &raquo;</a
+        >
+      </p>
+    </div>
+  </div>
+  <hr />
+</div>
+{% else %}
+<div class="container">
+  <h4><strong>Create an account to view and post awesome blogs</strong></h4>
+</div>
+{% endif %} {% endblock %}

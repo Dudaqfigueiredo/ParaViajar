@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %} {% block content %}
+<div class="container">
+  <article>
+    <div class="media-body">
+      <div class="list-group">
+        <a href="#">{{ object.author }}</a>
+        <small>{{ object.data }}</small>
+      </div>
+      <h2>{{ object.title }}</h2>
+      <p>{{ object.content }}</p>
+    </div>
+  </article>
+</div>
+{% endblock %}
